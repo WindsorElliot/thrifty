@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
+    @ObservedObject var userViewModel: UserViewModel = UserViewModel()
+    
+    
     var body: some View {
         Text("Hello, world!")
             .padding()

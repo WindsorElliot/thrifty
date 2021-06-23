@@ -13,6 +13,18 @@
 		8B12E9552682778900E76E80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B12E9542682778900E76E80 /* Preview Assets.xcassets */; };
 		8B12E95F2682778900E76E80 /* thriftyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E95E2682778900E76E80 /* thriftyTests.swift */; };
 		8B12E9692682778900E76E80 /* thriftyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E9682682778900E76E80 /* thriftyUITests.swift */; };
+		8B12E9762682781C00E76E80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B12E9752682781C00E76E80 /* GoogleService-Info.plist */; };
+		8B12E9792682791200E76E80 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8B12E9782682791200E76E80 /* FirebaseAuth */; };
+		8B12E97B2682791200E76E80 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B12E97A2682791200E76E80 /* FirebaseFirestore */; };
+		8B12E97D2682791200E76E80 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8B12E97C2682791200E76E80 /* FirebaseFirestoreSwift-Beta */; };
+		8B12E9802682792F00E76E80 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E97F2682792F00E76E80 /* Wallet.swift */; };
+		8B12E9822682797900E76E80 /* Spent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E9812682797900E76E80 /* Spent.swift */; };
+		8B12E98526827B2000E76E80 /* FirebaseAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E98426827B2000E76E80 /* FirebaseAuthController.swift */; };
+		8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E9862682817C00E76E80 /* Error+thrifty.swift */; };
+		8B12E9892683156000E76E80 /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E9882683156000E76E80 /* AppContext.swift */; };
+		8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E98B268319FA00E76E80 /* WalletViewModel+AppContext.swift */; };
+		8B247D702683637200DFF8F5 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D6F2683637200DFF8F5 /* BaseViewModel.swift */; };
+		8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D71268367CA00DFF8F5 /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +54,15 @@
 		8B12E95E2682778900E76E80 /* thriftyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thriftyTests.swift; sourceTree = "<group>"; };
 		8B12E9642682778900E76E80 /* thriftyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = thriftyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B12E9682682778900E76E80 /* thriftyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thriftyUITests.swift; sourceTree = "<group>"; };
+		8B12E9752682781C00E76E80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B12E97F2682792F00E76E80 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		8B12E9812682797900E76E80 /* Spent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spent.swift; sourceTree = "<group>"; };
+		8B12E98426827B2000E76E80 /* FirebaseAuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthController.swift; sourceTree = "<group>"; };
+		8B12E9862682817C00E76E80 /* Error+thrifty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+thrifty.swift"; sourceTree = "<group>"; };
+		8B12E9882683156000E76E80 /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		8B12E98B268319FA00E76E80 /* WalletViewModel+AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletViewModel+AppContext.swift"; sourceTree = "<group>"; };
+		8B247D6F2683637200DFF8F5 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		8B247D71268367CA00DFF8F5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +70,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B12E97D2682791200E76E80 /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				8B12E9792682791200E76E80 /* FirebaseAuth in Frameworks */,
+				8B12E97B2682791200E76E80 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +116,12 @@
 		8B12E94C2682778800E76E80 /* thrifty */ = {
 			isa = PBXGroup;
 			children = (
+				8B12E98326827B0600E76E80 /* controller */,
+				8B12E97E2682792100E76E80 /* model */,
 				8B12E94D2682778800E76E80 /* thriftyApp.swift */,
 				8B12E94F2682778800E76E80 /* ContentView.swift */,
 				8B12E9512682778900E76E80 /* Assets.xcassets */,
+				8B12E9752682781C00E76E80 /* GoogleService-Info.plist */,
 				8B12E9532682778900E76E80 /* Preview Content */,
 			);
 			path = thrifty;
@@ -124,6 +151,36 @@
 			path = thriftyUITests;
 			sourceTree = "<group>";
 		};
+		8B12E97E2682792100E76E80 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8B12E98A268319E100E76E80 /* viewModel */,
+				8B12E97F2682792F00E76E80 /* Wallet.swift */,
+				8B12E9812682797900E76E80 /* Spent.swift */,
+				8B12E9862682817C00E76E80 /* Error+thrifty.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		8B12E98326827B0600E76E80 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				8B12E98426827B2000E76E80 /* FirebaseAuthController.swift */,
+				8B12E9882683156000E76E80 /* AppContext.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		8B12E98A268319E100E76E80 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B12E98B268319FA00E76E80 /* WalletViewModel+AppContext.swift */,
+				8B247D6F2683637200DFF8F5 /* BaseViewModel.swift */,
+				8B247D71268367CA00DFF8F5 /* UserViewModel.swift */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +197,11 @@
 			dependencies = (
 			);
 			name = thrifty;
+			packageProductDependencies = (
+				8B12E9782682791200E76E80 /* FirebaseAuth */,
+				8B12E97A2682791200E76E80 /* FirebaseFirestore */,
+				8B12E97C2682791200E76E80 /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = thrifty;
 			productReference = 8B12E94A2682778800E76E80 /* thrifty.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 8B12E9412682778800E76E80;
+			packageReferences = (
+				8B12E9772682791200E76E80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8B12E94B2682778800E76E80 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -230,6 +295,7 @@
 			files = (
 				8B12E9552682778900E76E80 /* Preview Assets.xcassets in Resources */,
 				8B12E9522682778900E76E80 /* Assets.xcassets in Resources */,
+				8B12E9762682781C00E76E80 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +320,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B12E9822682797900E76E80 /* Spent.swift in Sources */,
+				8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */,
+				8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */,
+				8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */,
+				8B12E9802682792F00E76E80 /* Wallet.swift in Sources */,
+				8B12E9892683156000E76E80 /* AppContext.swift in Sources */,
+				8B247D702683637200DFF8F5 /* BaseViewModel.swift in Sources */,
 				8B12E9502682778800E76E80 /* ContentView.swift in Sources */,
+				8B12E98526827B2000E76E80 /* FirebaseAuthController.swift in Sources */,
 				8B12E94E2682778800E76E80 /* thriftyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,6 +677,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B12E9772682791200E76E80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B12E9782682791200E76E80 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B12E9772682791200E76E80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8B12E97A2682791200E76E80 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B12E9772682791200E76E80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8B12E97C2682791200E76E80 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B12E9772682791200E76E80 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B12E9422682778800E76E80 /* Project object */;
 }
