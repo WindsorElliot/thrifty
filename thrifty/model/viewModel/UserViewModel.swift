@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseAuth
+
+enum LoginState {
+    case loading
+    case login
+    case register
+    case connected(context: AppContext)
+}
 
 class UserViewModel: ObservableObject {
     private let authController = FirebaseAuthController()
     
-    @Published var isLoading: Bool = false
-    @Published var isConnected: Bool = false
+    @Published var state: LoginState = .loading
+    
     @Published var error: Error? = nil {
         didSet {
             self.showError = error != nil
@@ -21,32 +30,45 @@ class UserViewModel: ObservableObject {
     
     
     init() {
-        self.isLoading = true
-        self.isConnected = self.authController.currentUser != nil
-        self.isLoading = false
-        self.error = nil
-        self.showError = false
+        if self.authController.currentUser != nil {
+            self.state = .connected(context: AppContext())
+        }
+        else {
+            self.state = .login
+        }
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if user == nil  {
+                self.state = .login
+            }
+        }
+    }
+    
+    func handleTapRegister() {
+        self.state = .register
     }
     
     func connect(withEmail email: String, andPassword password: String) async {
-        self.isLoading = true
+        self.state = .loading
         do{
             _ = try await self.authController.signin(withEmail: email, andPassword: password)
-            self.isLoading = false
-            self.isConnected = true
+            self.state = .connected(context: AppContext())
         }
         catch {
-            self.isLoading = false
+            self.state = .login
             self.error = error
         }
     }
     
     func register(withEmail email: String, andPassword password: String) async {
-        self.isLoading = true
+        self.state = .loading
         do {
-            let _ try await self.authController.register(withEmail: email, andPassword: password)
+            let user = try await self.authController.register(withEmail: email, andPassword: password)
+            try await Firestore.firestore().collection("users").document(user.uid).setData(["createdDate": Date().timeIntervalSince1970])
+            self.state = .connected(context: AppContext())
         }
         catch {
+            self.state = .login
             self.error = error
         }
     }

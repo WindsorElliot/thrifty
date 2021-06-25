@@ -25,6 +25,10 @@
 		8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E98B268319FA00E76E80 /* WalletViewModel+AppContext.swift */; };
 		8B247D702683637200DFF8F5 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D6F2683637200DFF8F5 /* BaseViewModel.swift */; };
 		8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D71268367CA00DFF8F5 /* UserViewModel.swift */; };
+		8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */; };
+		8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */; };
+		8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */; };
+		8B7F607526839ABE000AB555 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		8B12E98B268319FA00E76E80 /* WalletViewModel+AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletViewModel+AppContext.swift"; sourceTree = "<group>"; };
 		8B247D6F2683637200DFF8F5 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		8B247D71268367CA00DFF8F5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
+		8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSwiftUIView.swift; sourceTree = "<group>"; };
+		8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSwiftUIView.swift; sourceTree = "<group>"; };
+		8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 		8B12E94C2682778800E76E80 /* thrifty */ = {
 			isa = PBXGroup;
 			children = (
+				8B247D732683717A00DFF8F5 /* view */,
 				8B12E98326827B0600E76E80 /* controller */,
 				8B12E97E2682792100E76E80 /* model */,
 				8B12E94D2682778800E76E80 /* thriftyApp.swift */,
@@ -179,6 +188,25 @@
 				8B247D71268367CA00DFF8F5 /* UserViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		8B247D732683717A00DFF8F5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F607326839AB2000AB555 /* home */,
+				8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */,
+				8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */,
+				8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		8B7F607326839AB2000AB555 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,14 +350,18 @@
 			files = (
 				8B12E9822682797900E76E80 /* Spent.swift in Sources */,
 				8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */,
+				8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */,
 				8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */,
+				8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */,
 				8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */,
 				8B12E9802682792F00E76E80 /* Wallet.swift in Sources */,
 				8B12E9892683156000E76E80 /* AppContext.swift in Sources */,
+				8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */,
 				8B247D702683637200DFF8F5 /* BaseViewModel.swift in Sources */,
 				8B12E9502682778800E76E80 /* ContentView.swift in Sources */,
 				8B12E98526827B2000E76E80 /* FirebaseAuthController.swift in Sources */,
 				8B12E94E2682778800E76E80 /* thriftyApp.swift in Sources */,
+				8B7F607526839ABE000AB555 /* HomeSwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +529,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +559,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
