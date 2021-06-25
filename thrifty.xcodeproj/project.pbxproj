@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B10D0772685BF5C005290AC /* BurgerSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B10D0762685BF5C005290AC /* BurgerSwiftUIView.swift */; };
 		8B12E94E2682778800E76E80 /* thriftyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E94D2682778800E76E80 /* thriftyApp.swift */; };
 		8B12E9502682778800E76E80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B12E94F2682778800E76E80 /* ContentView.swift */; };
 		8B12E9522682778900E76E80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B12E9512682778900E76E80 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */; };
 		8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */; };
 		8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */; };
+		8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */; };
 		8B7F607526839ABE000AB555 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B10D0762685BF5C005290AC /* BurgerSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerSwiftUIView.swift; sourceTree = "<group>"; };
 		8B12E94A2682778800E76E80 /* thrifty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = thrifty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B12E94D2682778800E76E80 /* thriftyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thriftyApp.swift; sourceTree = "<group>"; };
 		8B12E94F2682778800E76E80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
 		8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSwiftUIView.swift; sourceTree = "<group>"; };
 		8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSwiftUIView.swift; sourceTree = "<group>"; };
+		8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSwiftUIView.swift; sourceTree = "<group>"; };
 		8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B10D0752685BF4D005290AC /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				8B10D0762685BF5C005290AC /* BurgerSwiftUIView.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
 		8B12E9412682778800E76E80 = {
 			isa = PBXGroup;
 			children = (
@@ -193,12 +205,22 @@
 		8B247D732683717A00DFF8F5 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				8B3C6C84268608FA00835DF6 /* wallet */,
+				8B10D0752685BF4D005290AC /* menu */,
 				8B7F607326839AB2000AB555 /* home */,
 				8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */,
 				8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */,
 				8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		8B3C6C84268608FA00835DF6 /* wallet */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */,
+			);
+			path = wallet;
 			sourceTree = "<group>";
 		};
 		8B7F607326839AB2000AB555 /* home */ = {
@@ -349,10 +371,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B12E9822682797900E76E80 /* Spent.swift in Sources */,
+				8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */,
 				8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */,
 				8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */,
 				8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */,
 				8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */,
+				8B10D0772685BF5C005290AC /* BurgerSwiftUIView.swift in Sources */,
 				8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */,
 				8B12E9802682792F00E76E80 /* Wallet.swift in Sources */,
 				8B12E9892683156000E76E80 /* AppContext.swift in Sources */,
