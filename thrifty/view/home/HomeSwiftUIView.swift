@@ -29,11 +29,11 @@ struct HomeSwiftUIView: View {
                     LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                     
-                    WalletSwiftUIView {
-                        withAnimation {
-                            self.showMenu = true
-                        }
-                    }
+//                    WalletSwiftUIView {
+//                        withAnimation {
+//                            self.showMenu = true
+//                        }
+//                    }
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                     .disabled(self.showMenu)
@@ -60,7 +60,7 @@ struct HomeSwiftUIView: View {
             }, trailing: Button(action: {
                 
             }) {
-                
+                Image.init(systemName: "plus")
             })
         }
         .foregroundColor(.white)

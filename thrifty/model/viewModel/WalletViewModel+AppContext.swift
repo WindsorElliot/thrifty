@@ -12,6 +12,7 @@ class WalletViewModel: ObservableObject {
     private let context: AppContext
     
     @Published var wallets: [Wallet] = []
+    public var error: Error?
     
     init(context: AppContext = AppContext.shared) {
         self.context = context
@@ -44,15 +45,49 @@ extension WalletViewModel: BaseFirViewModel {
     }
     
     internal func handleAddDocumentFromBdd(_ documenSnashot: DocumentSnapshot) {
-        
+        do {
+            guard let wallet = try documenSnashot.data(as: Wallet.self) else {
+                return
+            }
+            self.wallets.append(wallet)
+        }
+        catch {
+            self.error = retriveFirStoreError(error)
+        }
     }
     
     internal func handleUpdateDocumentFromBdd(_ documenSnapshot: DocumentSnapshot) {
-        
+        do {
+            guard let wallet = try documenSnapshot.data(as: Wallet.self) else {
+                return
+            }
+            
+            guard let walletIndex = self.wallets.firstIndex(where: { $0.id == wallet.id }) else {
+                return
+            }
+            
+            self.wallets[walletIndex] = wallet
+        }
+        catch {
+            self.error = retriveFirStoreError(error)
+        }
     }
     
     internal func handleDeleteDocumentFromBdd(_ docuementSnapshot: DocumentSnapshot) {
-        
+        do {
+            guard let wallet = try docuementSnapshot.data(as: Wallet.self) else {
+                return
+            }
+            
+            guard let walletIndex = self.wallets.firstIndex(where: { $0.id == wallet.id }) else {
+                return
+            }
+            
+            self.wallets.remove(at: walletIndex)
+        }
+        catch {
+            self.error = retriveFirStoreError(error)
+        }
     }
 }
 

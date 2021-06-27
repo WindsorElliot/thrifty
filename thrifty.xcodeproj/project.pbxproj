@@ -30,6 +30,7 @@
 		8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */; };
 		8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */; };
 		8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */; };
+		8B3C6C882686202F00835DF6 /* WalletSheetViewSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */; };
 		8B7F607526839ABE000AB555 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSwiftUIView.swift; sourceTree = "<group>"; };
 		8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSwiftUIView.swift; sourceTree = "<group>"; };
 		8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSwiftUIView.swift; sourceTree = "<group>"; };
+		8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSheetViewSwiftUIView.swift; sourceTree = "<group>"; };
 		8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */,
+				8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */,
 			);
 			path = wallet;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B12E9822682797900E76E80 /* Spent.swift in Sources */,
+				8B3C6C882686202F00835DF6 /* WalletSheetViewSwiftUIView.swift in Sources */,
 				8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */,
 				8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */,
 				8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */,

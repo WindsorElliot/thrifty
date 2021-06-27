@@ -6,28 +6,34 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import Firebase
 
 struct WalletSwiftUIView: View {
+    @ObservedObject var walletViewModel: WalletViewModel = WalletViewModel()
     let handleTapShowMenuButton: () -> Void
     
     var body: some View {
-        Button {
-            self.handleTapShowMenuButton()
-        } label: {
-            Text("show Menu")
-                .foregroundColor(Color.white)
-        }
-
-    }
-}
-
-struct WalletSwiftUIView_Previews: PreviewProvider {
-    @State var showMenu: Bool = false
-    
-    static var previews: some View {
-        
-        WalletSwiftUIView {
-            print("tap tap")
+        VStack {
+            Button {
+                self.handleTapShowMenuButton()
+            } label: {
+                Text("show Menu")
+                    .foregroundColor(Color.white)
+            }
+            
+//            List(self.walletViewModel.wallets, id: \.id) {
+//                Text($0.name)
+//            }
         }
     }
 }
+
+//struct WalletSwiftUIView_Previews: PreviewProvider {
+//    
+//    static var previews: some View {
+//        WalletSwiftUIView {
+//            print("tap tap")
+//        }
+//    }
+//}

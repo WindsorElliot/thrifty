@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-enum WalletCountType: Int, Codable {
+enum WalletCountType: Int, Codable, CaseIterable{
     case week = 0
     case month = 1
     case years = 2
@@ -25,4 +25,19 @@ struct Wallet: Codable {
     var createdDate: Date {
         return Date(timeIntervalSince1970: _createdDate)
     }
+}
+
+extension WalletCountType {
+    var descriptionName: String {
+        switch self {
+        case .week:
+            return "semaine"
+        case .month:
+            return "mois"
+        case .years:
+            return "years"
+        }
+    }
+    
+    
 }
