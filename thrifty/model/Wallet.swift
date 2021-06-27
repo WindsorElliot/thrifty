@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import SwiftUI
 
 enum WalletCountType: Int, Codable, CaseIterable{
     case week = 0
@@ -21,9 +22,23 @@ struct Wallet: Codable {
     let spents: [Spent]?
     let type: WalletCountType
     let amount: Double
+    let iconName: String?
     
     var createdDate: Date {
         return Date(timeIntervalSince1970: _createdDate)
+    }
+    
+    var icon: Image {
+        guard let iconName = iconName else {
+            return Image(systemName: "creditcard")
+        }
+        
+        return Image(systemName: iconName)
+    }
+    
+    var solde: Double {
+        let totalSpent = self.spents?.reduce(0.0, { $0 + $1.amount }) ?? 0.0
+        return self.amount - totalSpent
     }
 }
 

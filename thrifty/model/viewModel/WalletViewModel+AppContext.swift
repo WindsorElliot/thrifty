@@ -16,21 +16,26 @@ class WalletViewModel: ObservableObject {
     
     init(context: AppContext = AppContext.shared) {
         self.context = context
-        self.context.store.collection("users").document(self.context.user.uid).collection(kCollectionName).addSnapshotListener { query, error in
-            if let err = error {
-                print(err)
-                return
-            }
-            query?.documentChanges.forEach({ change in
-                switch change.type {
-                case .added:
-                    self.handleAddDocumentFromBdd(change.document)
-                case .modified:
-                    self.handleUpdateDocumentFromBdd(change.document)
-                case .removed:
-                    self.handleDeleteDocumentFromBdd(change.document)
+        if context.type == .normal, let uid = self.context.user?.uid {
+            self.context.store?.collection("users").document(uid).collection(kCollectionName).addSnapshotListener { query, error in
+                if let err = error {
+                    print(err)
+                    return
                 }
-            })
+                query?.documentChanges.forEach({ change in
+                    switch change.type {
+                    case .added:
+                        self.handleAddDocumentFromBdd(change.document)
+                    case .modified:
+                        self.handleUpdateDocumentFromBdd(change.document)
+                    case .removed:
+                        self.handleDeleteDocumentFromBdd(change.document)
+                    }
+                })
+            }
+        }
+        else {
+            self.stubsContext()
         }
     }
 }
@@ -40,8 +45,15 @@ extension WalletViewModel: BaseFirViewModel {
         return "wallets"
     }
     
-    var collection: CollectionReference {
-        return self.context.store.collection("users").document(self.context.user.uid).collection(kCollectionName)
+    func collection() throws -> CollectionReference  {
+        guard
+            let store = self.context.store,
+            let uid = self.context.user?.uid
+        else {
+            throw NSError.defaultError(message: "Error context not initialized", domain: "Auth", code: 0)
+        }
+                
+        return store.collection("users").document(uid).collection(kCollectionName)
     }
     
     internal func handleAddDocumentFromBdd(_ documenSnashot: DocumentSnapshot) {
@@ -91,11 +103,23 @@ extension WalletViewModel: BaseFirViewModel {
     }
 }
 
+extension WalletViewModel {
+    func stubsContext() {
+        let wallet: Wallet = Wallet(id: UUID().uuidString, name: "Amex", _createdDate: Date().timeIntervalSince1970, spents: nil, type: .week, amount: 50, iconName: nil)
+        
+        self.wallets.append(wallet)
+        
+        let wallet2: Wallet = Wallet(id: UUID().uuidString, name: "Gold", _createdDate: Date().timeIntervalSince1970, spents: nil, type: .week, amount: 100, iconName: nil)
+        
+        self.wallets.append(wallet2)
+    }
+}
+
 extension WalletViewModel: AppContextProtocol {
     func createWallet(name: String, amout: Double, type: WalletCountType) async throws -> Wallet {
-        let walletToCreate = Wallet(id: nil, name: name, _createdDate: Date().timeIntervalSince1970, spents: nil, type: type, amount: amout)
+        let walletToCreate = Wallet(id: nil, name: name, _createdDate: Date().timeIntervalSince1970, spents: nil, type: type, amount: amout, iconName: nil)
         do {
-            let doc = try self.collection.addDocument(from: walletToCreate)
+            let doc = try self.collection().addDocument(from: walletToCreate)
             if let wallet = try await doc.getDocument().data(as: Wallet.self) {
                 return wallet
             }
@@ -116,13 +140,14 @@ extension WalletViewModel: AppContextProtocol {
                 _createdDate: wallet._createdDate,
                 spents: wallet.spents,
                 type: type ?? wallet.type,
-                amount: amount ?? wallet.amount
+                amount: amount ?? wallet.amount,
+                iconName: nil
             )
             
             guard let id = walletForUpdate.id else {
                 throw NSError.defaultError(message: "Une erreur inconue c'est produite", domain: "Wallet", code: 0)
             }
-            try self.collection.document(id).setData(from: walletForUpdate)
+            try self.collection().document(id).setData(from: walletForUpdate)
             
             return walletForUpdate
         }
@@ -133,7 +158,7 @@ extension WalletViewModel: AppContextProtocol {
     
     func deleteWallet(id: String) async throws {
         do {
-            try await self.collection.document(id).delete()
+            try await self.collection().document(id).delete()
         }
         catch {
             throw retriveFirStoreError(error)
@@ -142,7 +167,7 @@ extension WalletViewModel: AppContextProtocol {
     
     private func retriveFirStoreError(_ error: Error) -> Error {
         guard let firErr = FirestoreErrorCode(rawValue: error._code) else {
-            return NSError.defaultError(message: "Une erreur inconue c'est produite", domain: "Wallet", code: 0)
+            return error
         }
         
         switch firErr {

@@ -11,15 +11,28 @@ import FirebaseAuth
 
 typealias AppContextProtocol = WalletContextProtocol
 
+enum ContextType {
+    case preview
+    case normal
+}
+
 class AppContext {
     static let shared: AppContext = AppContext()
     
-    let user: User
-    let store: Firestore
+    let type: ContextType
+    let user: User?
+    let store: Firestore?
     
-    init() {
-        self.user = Auth.auth().currentUser!
-        self.store = Firestore.firestore()
+    init(type: ContextType = .normal) {
+        self.type = type
+        switch self.type {
+        case .normal:
+            self.user = Auth.auth().currentUser!
+            self.store = Firestore.firestore()
+        case .preview:
+            self.user = nil
+            self.store = nil
+        }
     }
     
 }

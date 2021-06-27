@@ -9,9 +9,15 @@ import SwiftUI
 import FirebaseAuth
 
 struct HomeSwiftUIView: View {
+    private let context: AppContext
+    
     @State var message: String = ""
     @State var showError: Bool = false
     @State var showMenu: Bool = false
+    
+    init(context: AppContext = AppContext.shared) {
+        self.context = context
+    }
     
     var body: some View {
         let dragGestuire = DragGesture()
@@ -29,11 +35,9 @@ struct HomeSwiftUIView: View {
                     LinearGradient(gradient: Gradient(colors: [.purple, .blue]), startPoint: .top, endPoint: .bottom)
                         .edgesIgnoringSafeArea(.all)
                     
-//                    WalletSwiftUIView {
-//                        withAnimation {
-//                            self.showMenu = true
-//                        }
-//                    }
+                    ScrollView {
+                        WalletsSwiftUIView(viewModel: WalletViewModel(context: self.context))
+                    }
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                     .disabled(self.showMenu)
@@ -57,10 +61,12 @@ struct HomeSwiftUIView: View {
             }) {
                 Image(systemName: self.showMenu == false ? "line.horizontal.3" : "xmark")
                     .imageScale(.large)
+                    .foregroundColor(self.showMenu == false ? Color.black : Color.white)
             }, trailing: Button(action: {
                 
             }) {
                 Image.init(systemName: "plus")
+                    .foregroundColor(.black)
             })
         }
         .foregroundColor(.white)
@@ -69,6 +75,7 @@ struct HomeSwiftUIView: View {
 
 struct HomeSwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeSwiftUIView()
+        HomeSwiftUIView(context: AppContext(type: .preview))
+            
     }
 }

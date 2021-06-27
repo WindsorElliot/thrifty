@@ -29,9 +29,10 @@
 		8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */; };
 		8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */; };
 		8B247D79268381BE00DFF8F5 /* RegisterSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */; };
-		8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */; };
+		8B3C6C862686090D00835DF6 /* WalletsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C852686090D00835DF6 /* WalletsSwiftUIView.swift */; };
 		8B3C6C882686202F00835DF6 /* WalletSheetViewSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */; };
 		8B7F607526839ABE000AB555 /* HomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */; };
+		8B89073D2688CDDC0007FC71 /* WalletSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B89073C2688CDDC0007FC71 /* WalletSwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,9 +75,10 @@
 		8B247D742683719200DFF8F5 /* LoginSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSwiftUIView.swift; sourceTree = "<group>"; };
 		8B247D762683794900DFF8F5 /* LoaderSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderSwiftUIView.swift; sourceTree = "<group>"; };
 		8B247D78268381BE00DFF8F5 /* RegisterSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSwiftUIView.swift; sourceTree = "<group>"; };
-		8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSwiftUIView.swift; sourceTree = "<group>"; };
+		8B3C6C852686090D00835DF6 /* WalletsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsSwiftUIView.swift; sourceTree = "<group>"; };
 		8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSheetViewSwiftUIView.swift; sourceTree = "<group>"; };
 		8B7F607426839ABE000AB555 /* HomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSwiftUIView.swift; sourceTree = "<group>"; };
+		8B89073C2688CDDC0007FC71 /* WalletSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,8 +222,9 @@
 		8B3C6C84268608FA00835DF6 /* wallet */ = {
 			isa = PBXGroup;
 			children = (
-				8B3C6C852686090D00835DF6 /* WalletSwiftUIView.swift */,
+				8B3C6C852686090D00835DF6 /* WalletsSwiftUIView.swift */,
 				8B3C6C872686202F00835DF6 /* WalletSheetViewSwiftUIView.swift */,
+				8B89073C2688CDDC0007FC71 /* WalletSwiftUIView.swift */,
 			);
 			path = wallet;
 			sourceTree = "<group>";
@@ -375,7 +378,7 @@
 			files = (
 				8B12E9822682797900E76E80 /* Spent.swift in Sources */,
 				8B3C6C882686202F00835DF6 /* WalletSheetViewSwiftUIView.swift in Sources */,
-				8B3C6C862686090D00835DF6 /* WalletSwiftUIView.swift in Sources */,
+				8B3C6C862686090D00835DF6 /* WalletsSwiftUIView.swift in Sources */,
 				8B12E9872682817C00E76E80 /* Error+thrifty.swift in Sources */,
 				8B247D752683719200DFF8F5 /* LoginSwiftUIView.swift in Sources */,
 				8B12E98C268319FA00E76E80 /* WalletViewModel+AppContext.swift in Sources */,
@@ -384,6 +387,7 @@
 				8B247D72268367CA00DFF8F5 /* UserViewModel.swift in Sources */,
 				8B12E9802682792F00E76E80 /* Wallet.swift in Sources */,
 				8B12E9892683156000E76E80 /* AppContext.swift in Sources */,
+				8B89073D2688CDDC0007FC71 /* WalletSwiftUIView.swift in Sources */,
 				8B247D772683794900DFF8F5 /* LoaderSwiftUIView.swift in Sources */,
 				8B247D702683637200DFF8F5 /* BaseViewModel.swift in Sources */,
 				8B12E9502682778800E76E80 /* ContentView.swift in Sources */,

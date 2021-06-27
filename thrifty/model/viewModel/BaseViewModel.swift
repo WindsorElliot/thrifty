@@ -12,7 +12,7 @@ import FirebaseFirestore
 protocol BaseFirViewModel {
     var kCollectionName: String { get }
     
-    var collection: CollectionReference { get }
+    func collection() throws -> CollectionReference
     
     func handleAddDocumentFromBdd(_ documenSnashot: DocumentSnapshot)
     
